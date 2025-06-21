@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숙제를 해보자</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>To do list</h1>
+  </header>
+
+  <main>
+    <selection>
+      <h2>오늘 할 일</h2>
+
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="검색어를 입력하세요">
+        <button onclick="filterList()">검색</button>
+        <button onclick="document.getElementById('popup7').showPopover()">추가</button>
+      </div>
+
+      <ul class="scroll-list">
+        <li>
+          <input type="checkbox" id="item1">
+          <span class="item-label" onclick="document.getElementById('popup1').showPopover()">피자</span>
+        </li>
+        <li>
+          <input type="checkbox" id="item1">
+          <span class="item-label" onclick="document.getElementById('popup2').showPopover()">햄버거</label>
+        </li>
+        <li>
+          <input type="checkbox" id="item1">
+          <span class="item-label" onclick="document.getElementById('popup3').showPopover()">초밥</span>
+        </li>
+        <li>
+          <input type="checkbox" id="item1">
+          <span class="item-label" onclick="document.getElementById('popup4').showPopover()">치킨</span>
+        </li>
+        <li>
+          <input type="checkbox" id="item1">
+          <span class="item-label" onclick="document.getElementById('popup5').showPopover()">곱창</span>
+        </li>
+        <li>
+          <input type="checkbox" id="item1">
+          <span class="item-label" onclick="document.getElementById('popup6').showPopover()">김치찌개</span>
+        </li>
+      </ul>
+
+      <div id="popup1" popover>
+        <strong>피자 정보</strong><br>
+        도미노 포테이토 피자 주세요<br>
+        <button onclick="document.getElementById('popup1').hidePopover()">닫기</button>
+      </div>
+    
+      <div id="popup2" popover>
+        <strong>햄버거 정보</strong><br>
+        햄버거는 맘스터치<br>
+        <button onclick="document.getElementById('popup2').hidePopover()">닫기</button>
+      </div>
+    
+      <div id="popup3" popover>
+        <strong>초밥 정보</strong><br>
+        광어묵은지초밥<br>
+        <button onclick="document.getElementById('popup3').hidePopover()">닫기</button>
+      </div>
+
+      <div id="popup4" popover>
+        <strong>치킨 정보</strong><br>
+        치킨은 사실 별로 안땡겨<br>
+        <button onclick="document.getElementById('popup4').hidePopover()">닫기</button>
+      </div>
+
+      <div id="popup5" popover>
+        <strong>곱창 정보</strong><br>
+        대창도 먹고싶다<br>
+        <button onclick="document.getElementById('popup5').hidePopover()">닫기</button>
+      </div>
+
+      <div id="popup6" popover>
+        <strong>김치찌개 정보</strong><br>
+        짜글이 먹고싶다<br>
+        <button onclick="document.getElementById('popup6').hidePopover()">닫기</button>
+      </div>
+
+      <div id="popup7" popover>
+        <strong>to do 추가하기</strong><br>
+        추가하세요~<br>
+        <button onclick="document.getElementById('popup7').hidePopover()">닫기</button>
+      </div>
+    </selection>
+  </main>
+
+  <footer>
+    &copy; 2025 Swing. All rights reserved.
+  </footer>
+</body>
+
+</html>
