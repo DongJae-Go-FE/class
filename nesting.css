@@ -1,0 +1,59 @@
+/* 일단은 이런게 있다 정도만 알고 있으세요 */
+/* 
+   nesting css 장점 
+   일반 css대비 작성량이 많이 줄음 즉 css작성 노가다가 많이 줄어서 편함
+
+   nesting css 단점
+   잘못쓰면 가독성 떨어짐 - 학습 곡선이 조금 있음
+*/
+
+.controls {
+  margin-bottom: 12px;
+}
+
+.search-container {
+  > button {
+    padding: 6px 12px;
+    margin-left: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+.scroll-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 125px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0 4px;
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+
+    /*& << 부모 선택자*/
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:has(input[type="checkbox"]:checked) {
+      button {
+        text-decoration: line-through;
+        color: gray;
+      }
+    }
+
+    button {
+      border: none;
+      background-color: transparent;
+    }
+  }
+}

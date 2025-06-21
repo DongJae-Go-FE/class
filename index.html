@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>숙제를 해보자</title>
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="nesting.css"> -->
 </head>
+
 <body>
   <header>
     <h1>To do list</h1>
   </header>
 
   <main>
-    <selection>
+    <section>
       <h2>오늘 할 일</h2>
 
       <div class="search-container">
@@ -23,73 +27,99 @@
 
       <ul class="scroll-list">
         <li>
+          <!-- id는 다른 요소들이 동일한 값을 가질 수 없으며 고유한 값임 -->
           <input type="checkbox" id="item1">
-          <span class="item-label" onclick="document.getElementById('popup1').showPopover()">피자</span>
+          <button class="item-label" popovertarget="popup1" popovertargetaction="show">
+            피자
+            <!-- 기존 코드는 인라인으로 자바스크립트를 사용한 것
+            일반 html 속성으로 변겅 
+            -->
+          </button>
+          <!-- 웹 표준을 위해 추가 -->
+          <label for="item1" hidden>피자</label>
         </li>
         <li>
-          <input type="checkbox" id="item1">
-          <span class="item-label" onclick="document.getElementById('popup2').showPopover()">햄버거</label>
+          <input type="checkbox" id="item2">
+          <button class="item-label" popovertarget="popup2" popovertargetaction="show">
+            햄버거
+          </button>
+          <label for="item2" hidden>햄버거</label>
         </li>
         <li>
-          <input type="checkbox" id="item1">
-          <span class="item-label" onclick="document.getElementById('popup3').showPopover()">초밥</span>
+          <input type="checkbox" id="item3">
+          <button class="item-label" popovertarget="popup3" popovertargetaction="show">
+            초밥
+          </button>
+          <label for="item3" hidden>초밥</label>
         </li>
         <li>
-          <input type="checkbox" id="item1">
-          <span class="item-label" onclick="document.getElementById('popup4').showPopover()">치킨</span>
+          <input type="checkbox" id="item4">
+          <button class="item-label" popovertarget="popup4" popovertargetaction="show">
+            치킨
+          </button>
+          <label for="item4" hidden>치킨</label>
         </li>
         <li>
-          <input type="checkbox" id="item1">
-          <span class="item-label" onclick="document.getElementById('popup5').showPopover()">곱창</span>
+          <input type="checkbox" id="item5">
+          <button class="item-label" popovertarget="popup5" popovertargetaction="show">
+            곱창
+          </button>
+          <label for="item5" hidden>곱창</label>
         </li>
         <li>
-          <input type="checkbox" id="item1">
-          <span class="item-label" onclick="document.getElementById('popup6').showPopover()">김치찌개</span>
+          <input type="checkbox" id="item6">
+          <button class="item-label" popovertarget="popup6" popovertargetaction="show">
+            김치찌개
+          </button>
+          <label for="item6" hidden>김치찌개</label>
         </li>
       </ul>
 
-      <div id="popup1" popover>
+      <div id="popup1" popover="manual">
         <strong>피자 정보</strong><br>
         도미노 포테이토 피자 주세요<br>
-        <button onclick="document.getElementById('popup1').hidePopover()">닫기</button>
+        <button popovertargetaction="hide" popovertarget="popup1">닫기</button>
+        <!-- 기존 코드는 인라인으로 자바스크립트를 사용한 것
+            일반 html 속성으로 변겅 
+            -->
       </div>
-    
+
       <div id="popup2" popover>
         <strong>햄버거 정보</strong><br>
         햄버거는 맘스터치<br>
-        <button onclick="document.getElementById('popup2').hidePopover()">닫기</button>
+        <button popovertargetaction="hide">닫기</button>
       </div>
-    
+
       <div id="popup3" popover>
         <strong>초밥 정보</strong><br>
         광어묵은지초밥<br>
-        <button onclick="document.getElementById('popup3').hidePopover()">닫기</button>
+        <button popovertargetaction="hide">닫기</button>
       </div>
 
       <div id="popup4" popover>
         <strong>치킨 정보</strong><br>
         치킨은 사실 별로 안땡겨<br>
-        <button onclick="document.getElementById('popup4').hidePopover()">닫기</button>
+        <button popovertargetaction="hide">닫기</button>
       </div>
 
       <div id="popup5" popover>
         <strong>곱창 정보</strong><br>
         대창도 먹고싶다<br>
-        <button onclick="document.getElementById('popup5').hidePopover()">닫기</button>
+        <button popovertargetaction="hide">닫기</button>
       </div>
 
       <div id="popup6" popover>
         <strong>김치찌개 정보</strong><br>
         짜글이 먹고싶다<br>
-        <button onclick="document.getElementById('popup6').hidePopover()">닫기</button>
+        <button popovertargetaction="hide">닫기</button>
       </div>
 
       <div id="popup7" popover>
         <strong>to do 추가하기</strong><br>
         추가하세요~<br>
-        <button onclick="document.getElementById('popup7').hidePopover()">닫기</button>
+        <button popovertargetaction="hide">닫기</button>
       </div>
-    </selection>
+    </section>
   </main>
 
   <footer>

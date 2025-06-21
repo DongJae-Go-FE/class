@@ -1,34 +1,28 @@
-/* 클래스 선택자 : 모든 .controls선택자에 대해 적용 */
 .controls {
   margin-bottom: 12px;
 }
 
-/* type="text" 속성을 가진 <input> 요소에만 스타일을 적용 */
-input[type="text"] {
-  padding: 6px;
-  font-size: 16px;
-}
-
-button {
+.search-container > button {
   padding: 6px 12px;
   margin-left: 4px;
   font-size: 16px;
   cursor: pointer;
 }
 
-/* 타입선택자 : 해당 타입의 해당 클래스의 경우에만 적용 */
-ul.scroll-list {
+.scroll-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  max-height: 125px; /* 약 3개의 li 높이 기준 */
+  max-height: 125px;
   overflow-y: auto;
   border: 1px solid #ddd;
   border-radius: 6px;
 }
 
-/* 클래스가 scroll-list인 <ul> 내부의 모든 <li> 요소들에 아래 스타일을 적용 */
-ul.scroll-list li {
+.scroll-list li {
+  display: flex;
+  align-items: center;
+  gap: 0 4px;
   padding: 10px;
   cursor: pointer;
   color: black;
@@ -36,32 +30,16 @@ ul.scroll-list li {
   border-bottom: 1px solid #eee;
 }
 
-/* li:last-child: 해당 ul.scroll-list 안에서 마지막 <li> 요소 하나만 선택 */
-ul.scroll-list li:last-child {
+.scroll-list li button {
+  border: none;
+  background-color: transparent;
+}
+
+.scroll-list li:last-child {
   border-bottom: none;
 }
 
-/* 속성선택자 */
-[popover] {
-  border: 1px solid #ccc;
-  padding: 12px;
-  border-radius: 8px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  width: 250px;
-  line-height: 1.5;
-}
-
-/* 형제선택자 */
-/* 체크박스에 체크되었을 때, label에 줄 긋고 색상 변경 */
-/* ul.scroll-list input[type="checkbox"]:checked + span {
-  text-decoration: line-through;
-  color: gray;
-} */
-
-/* has선택자 */
-/* 체크박스에 체크되었을 때, label에 줄 긋고 색상 변경 */
-ul.scroll-list li:has(input[type="checkbox"]:checked) {
+.scroll-list li:has(input[type="checkbox"]:checked) button {
   text-decoration: line-through;
   color: gray;
 }

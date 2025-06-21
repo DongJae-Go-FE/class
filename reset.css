@@ -1,0 +1,48 @@
+@charset "utf-8"; /* 스타일 시트의 인코딩을 Unicode UTF-8로 설정 -  글자가 깨지지 않도록  */
+
+/* reset css */
+
+/** 
+ html에는 기본 css가 적용이 된 상태 
+ 기본 스타일을 없애기 위해 css로 초기화 한다
+*/
+
+/* 
+ 보통은 초기화 하는 스타일,
+ 폰트 설정,
+ 태그나, 속성 단일로만 지정을 할 걸 따로 빼준다.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+[popover] {
+  width: 250px;
+
+  margin: auto;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  line-height: 1.5;
+}
+
+input[type="text"] {
+  padding: 6px;
+  font-size: 16px;
+}
+
+/* 이게 무엇인지 한번 생각해보세요 
+  pointer-events: none; 자바스크립트가 아닌 css로 클릭 이벤트를 방지할 수 있는 속성
+*/
+body:has([popover]:popover-open) input {
+  pointer-events: none;
+}
